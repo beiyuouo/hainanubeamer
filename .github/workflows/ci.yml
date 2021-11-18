@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: CatInCosmicSpace/latex-template/actions/miktex@master
+
+      - name: Compile full example
+        run: |
+          initexmf --register-root $PWD
+          latexmk -pdf main.tex
+          latexmk -pdf main-en.tex
+      - name: Clean after build full example
+        run: |
+          latexmk -c ./main.tex
+          latexmk -c ./main-en.tex
+      - name: "Git artifact: PDF"
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: |
+            ./main.pdf
+            ./main-en.pdf

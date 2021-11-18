@@ -1,0 +1,111 @@
+%%
+%% This is file `beamercolorthemehainanubeamer.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% hainanubeamer.dtx  (with options: `hainanucolorstyle')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2019--2021 by Jingxuan Yang <yanglatex2e@gmail.com>
+%% 
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008/05/04 or later.
+%% 
+%% To produce the documentation run the original source files ending with `.dtx'
+%% through LaTeX.
+%% 
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamercolorthemehainanubeamer}
+[2021/11/15 v1.1.0 A Beamer Theme for Hainan University (HaiNanU)]
+\DeclareOptionBeamer{hainanublue}{\def\beamer@hainanucolor{hainanublue}}
+\DeclareOptionBeamer{hainanublue2}{\def\beamer@hainanucolor{hainanublue2}}
+\DeclareOptionBeamer{smoothbars}{\def\beamer@hainanubar{smoothbars}}
+\DeclareOptionBeamer{sidebar}{\def\beamer@hainanubar{sidebar}}
+\ProcessOptionsBeamer
+
+\def\beamer@hainanucolorblue{hainanublue}
+\def\beamer@hainanusidebar{sidebar}
+\mode<presentation>
+
+\ifx\beamer@hainanucolor\beamer@hainanucolorblue
+  \definecolor{beamer@textcolor}{RGB}{25,25,112}
+  \definecolor{beamer@headercolor}{RGB}{0,64,152} % blue
+  \ifx\beamer@hainanubar\beamer@hainanusidebar
+    \definecolor{beamer@sidebarcolor}{RGB}{0,64,152}
+  \else
+    \definecolor{beamer@sidebarcolor}{RGB}{0,64,152}
+  \fi
+\else
+  \definecolor{beamer@textcolor}{RGB}{25,25,112}
+  \definecolor{beamer@headercolor}{RGB}{0,64,152}
+  \ifx\beamer@hainanubar\beamer@hainanusidebar
+    \definecolor{beamer@sidebarcolor}{RGB}{0,64,152}
+  \else
+    \definecolor{beamer@sidebarcolor}{RGB}{0,64,152}
+  \fi
+\fi
+
+\setbeamercolor{title}{fg=white,bg=beamer@headercolor}
+\ifx\beamer@hainanubar\beamer@hainanusidebar
+  \setbeamercolor{frametitle}{fg=beamer@headercolor,bg=beamer@headercolor!10}
+\else
+  \setbeamercolor{frametitle}{fg=white,bg=beamer@headercolor}
+\fi
+\setbeamerfont{frametitle}{size=\large}
+
+\setbeamercolor{secondbottomline}{fg=white,bg=beamer@headercolor!50!black}
+\setbeamercolor{firstbottomline}{fg=white,bg=beamer@headercolor}
+
+\setbeamercolor{palette primary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor{palette secondary}{use=structure,fg=white,bg=structure.fg!75!black}
+\setbeamercolor{palette tertiary}{use=structure,fg=white,bg=structure.fg!50!black}
+\setbeamercolor{palette quaternary}{fg=white,bg=structure.fg!50!black}
+
+\setbeamercolor{block title}{fg=white,bg=beamer@headercolor}
+\setbeamercolor{block body}{bg=beamer@headercolor!10}
+\setbeamercolor{block title example}{%
+  use={normal text,example text},fg=white,bg=example text.fg!75!green
+}
+\setbeamercolor{fine separation line}{}
+\setbeamercolor{item projected}{fg=white}
+
+\setbeamercolor{palette sidebar primary}{use=normal text,fg=normal text.fg}
+\setbeamercolor{palette sidebar secondary}{use=structure,fg=structure.fg}
+\setbeamercolor{palette sidebar tertiary}{use=normal text,fg=normal text.fg}
+\setbeamercolor{palette sidebar quaternary}{use=structure,fg=structure.fg}
+
+\setbeamercolor{section in sidebar}{fg=beamer@textcolor}
+\setbeamercolor{section in sidebar shaded}{fg=gray}
+\setbeamercolor{separation line}{}
+\ifx\beamer@hainanubar\beamer@hainanusidebar
+  \setbeamercolor{sidebar}{bg=beamer@sidebarcolor!10}
+\else
+  \setbeamercolor{sidebar}{bg=beamer@sidebarcolor}
+\fi
+\setbeamercolor{sidebar}{parent=palette primary}
+\setbeamercolor{structure}{fg=beamer@headercolor}
+\setbeamercolor{subsection in sidebar}{fg=beamer@textcolor}
+\setbeamercolor{subsection in sidebar shaded}{fg=gray}
+\setbeamercolor{logo}{bg=beamer@headercolor!20}
+
+\mode<all>
+%% 
+%% This package consists of the file  hainanubeamer.dtx,
+%%              and the derived files hainanubeamer.pdf,
+%%                                    beamerthemehainanubeamer.sty,
+%%                                    beamercolorthemehainanubeamer.sty,
+%%                                    beamerinnerthemehainanubeamer.sty,
+%%                                    beamerouterthemehainanubeamer.sty.
+%% 
+%%
+%% End of file `beamercolorthemehainanubeamer.sty'.

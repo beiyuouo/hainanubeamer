@@ -1,0 +1,90 @@
+%%
+%% This is file `beamerinnerthemehainanubeamer.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% hainanubeamer.dtx  (with options: `hainanuinnerstyle')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2019--2021 by Jingxuan Yang <yanglatex2e@gmail.com>
+%% 
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008/05/04 or later.
+%% 
+%% To produce the documentation run the original source files ending with `.dtx'
+%% through LaTeX.
+%% 
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerinnerthemehainanubeamer}
+[2021/11/15 v1.1.0 A Beamer Theme for Hainan University (HaiNanU)]
+\RequirePackage{tikz}
+\usetikzlibrary{external}
+\DeclareOptionBeamer{en}{\def\beamer@hainanulang{english}}
+\DeclareOptionBeamer{sectiontoc}{\def\beamer@hainanusectoc{sectiontoc}}
+\DeclareOptionBeamer{subsectiontoc}{\def\beamer@hainanusubsectoc{subsectiontoc}}
+\ProcessOptionsBeamer
+
+\def\beamer@hainanulanguage{english}
+\def\beamer@hainanusectiontoc{sectiontoc}
+\def\beamer@hainanusubsectiontoc{subsectiontoc}
+\mode<presentation>
+
+\ifx\beamer@hainanulang\beamer@hainanulanguage
+  \relax
+\else
+  \RequirePackage{ctex}
+\fi
+
+\useinnertheme{circles}
+\setbeamertemplate{caption}[numbered]{}
+\useinnertheme[shadow]{rounded}
+
+\newcommand\varparallel{%
+  \mathrel{%
+    \text{%
+      \tikz[baseline] \draw (0em,-0.3ex) -- (.4em,1.7ex) (.2em,-0.3ex) -- (.6em,1.7ex);
+    }%
+  }%
+}
+
+\ifx\beamer@hainanusectoc\beamer@hainanusectiontoc
+  \AtBeginSection[]{
+    \begin{frame}
+      \begin{multicols}{2}
+        \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+      \end{multicols}
+    \end{frame}
+  }
+\fi
+
+\ifx\beamer@hainanusubsectoc\beamer@hainanusubsectiontoc
+  \AtBeginSubsection[]{
+    \begin{frame}
+      \begin{multicols}{2}
+        \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+      \end{multicols}
+    \end{frame}
+  }
+\fi
+
+\mode<all>
+%% 
+%% This package consists of the file  hainanubeamer.dtx,
+%%              and the derived files hainanubeamer.pdf,
+%%                                    beamerthemehainanubeamer.sty,
+%%                                    beamercolorthemehainanubeamer.sty,
+%%                                    beamerinnerthemehainanubeamer.sty,
+%%                                    beamerouterthemehainanubeamer.sty.
+%% 
+%%
+%% End of file `beamerinnerthemehainanubeamer.sty'.

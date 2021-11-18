@@ -1,0 +1,84 @@
+%%
+%% This is file `beamerouterthemehainanubeamer.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% hainanubeamer.dtx  (with options: `hainanuouterstyle')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2019--2021 by Jingxuan Yang <yanglatex2e@gmail.com>
+%% 
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008/05/04 or later.
+%% 
+%% To produce the documentation run the original source files ending with `.dtx'
+%% through LaTeX.
+%% 
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerouterthemehainanubeamer}
+[2021/11/15 v1.1.0 A Beamer Theme for Hainan University (HaiNanU)]
+\DeclareOptionBeamer{smoothbars}{\def\beamer@hainanubar{smoothbars}}
+\DeclareOptionBeamer{sidebar}{\def\beamer@hainanubar{sidebar}}
+\ProcessOptionsBeamer
+\def\beamer@hainanusidebar{sidebar}
+
+\mode<presentation>
+
+\setbeamertemplate{navigation symbols}{}
+
+\ifx\beamer@hainanubar\beamer@hainanusidebar
+  \useoutertheme[width=0.17\linewidth]{sidebar}
+  \logo{\includegraphics[width=0.08\linewidth]{hainanulogo.pdf}}
+\else
+  \useoutertheme[footline=authorinstitutetitle,subsection=false]{smoothbars}
+\fi
+
+\makeatletter
+\newcommand{\frameofframes}{/}
+\newcommand{\setframeofframes}[1]{
+  \renewcommand{\frameofframes}{#1}
+}
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+    leftskip=.3cm,rightskip=.3cm plus1fil]{firstbottomline}%
+    \leavevmode{\usebeamerfont{author in head/foot}\insertshortauthor}%
+    \hfill%
+    {\usebeamerfont{institute in head/foot}%
+    \usebeamercolor[fg]{frame number}%
+      \insertshortinstitute
+    }%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+    leftskip=.3cm,rightskip=.3cm plus1fil]{secondbottomline}%
+    {\usebeamerfont{title in head/foot}\insertshorttitle}%
+    \hfill%
+    {\usebeamerfont{frame number}\usebeamercolor[fg]{frame number}\insertframenumber~\frameofframes~\inserttotalframenumber}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+  \end{beamercolorbox}
+}
+\makeatother
+
+\mode<all>
+%% 
+%% This package consists of the file  hainanubeamer.dtx,
+%%              and the derived files hainanubeamer.pdf,
+%%                                    beamerthemehainanubeamer.sty,
+%%                                    beamercolorthemehainanubeamer.sty,
+%%                                    beamerinnerthemehainanubeamer.sty,
+%%                                    beamerouterthemehainanubeamer.sty.
+%% 
+%%
+%% End of file `beamerouterthemehainanubeamer.sty'.

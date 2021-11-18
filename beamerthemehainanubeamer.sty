@@ -1,0 +1,98 @@
+%%
+%% This is file `beamerthemehainanubeamer.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% hainanubeamer.dtx  (with options: `hainanubeamer')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2019--2021 by Jingxuan Yang <yanglatex2e@gmail.com>
+%% 
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008/05/04 or later.
+%% 
+%% To produce the documentation run the original source files ending with `.dtx'
+%% through LaTeX.
+%% 
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemehainanubeamer}
+[2021/11/15 v1.1.0 A Beamer Theme for Hainan University (HaiNanU)]
+\def\hainanubeamer{\textsc{hainanu}\-\textsc{Beamer}}
+\RequirePackage{tikz}
+\usetikzlibrary{external}
+\RequirePackage{pgf}
+\RequirePackage{multicol}
+\RequirePackage{multimedia}
+\RequirePackage{calc}
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{bm}
+\RequirePackage{graphicx}
+\RequirePackage{tabularx}
+\RequirePackage{booktabs}
+\RequirePackage{multirow}
+\RequirePackage{enumerate}
+\RequirePackage{hyperref}
+\RequirePackage{algorithm}
+\RequirePackage{algorithmic}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{latexsym,xcolor,multicol,calligra}
+\RequirePackage{pstricks,listings,stackengine}
+\RequirePackage[sort&compress,numbers]{natbib}
+\DeclareOptionBeamer{hainanublue}{
+  \PassOptionsToPackage{hainanublue}{beamercolorthemehainanubeamer}
+  \PassOptionsToPackage{hainanublue}{beamerinnerthemehainanubeamer}
+  \PassOptionsToPackage{hainanublue}{beamerouterthemehainanubeamer}
+}
+\DeclareOptionBeamer{hainanublue2}{
+  \PassOptionsToPackage{hainanublue2}{beamercolorthemehainanubeamer}
+  \PassOptionsToPackage{hainanublue2}{beamerinnerthemehainanubeamer}
+  \PassOptionsToPackage{hainanublue2}{beamerouterthemehainanubeamer}
+}
+\DeclareOptionBeamer{smoothbars}{
+  \PassOptionsToPackage{smoothbars}{beamercolorthemehainanubeamer}
+  \PassOptionsToPackage{smoothbars}{beamerouterthemehainanubeamer}
+}
+\DeclareOptionBeamer{sidebar}{
+  \PassOptionsToPackage{sidebar}{beamercolorthemehainanubeamer}
+  \PassOptionsToPackage{sidebar}{beamerouterthemehainanubeamer}
+}
+\DeclareOptionBeamer{sectiontoc}{
+  \PassOptionsToPackage{sectiontoc}{beamerinnerthemehainanubeamer}
+}
+\DeclareOptionBeamer{subsectiontoc}{
+  \PassOptionsToPackage{subsectiontoc}{beamerinnerthemehainanubeamer}
+}
+\DeclareOptionBeamer{en}{
+  \PassOptionsToPackage{en}{beamerinnerthemehainanubeamer}
+}
+\ProcessOptionsBeamer
+\mode<presentation>
+{
+  \useinnertheme{hainanubeamer}
+  \useoutertheme{hainanubeamer}
+  \usecolortheme{hainanubeamer}
+}
+
+\mode<all>
+%% 
+%% This package consists of the file  hainanubeamer.dtx,
+%%              and the derived files hainanubeamer.pdf,
+%%                                    beamerthemehainanubeamer.sty,
+%%                                    beamercolorthemehainanubeamer.sty,
+%%                                    beamerinnerthemehainanubeamer.sty,
+%%                                    beamerouterthemehainanubeamer.sty.
+%% 
+%%
+%% End of file `beamerthemehainanubeamer.sty'.
