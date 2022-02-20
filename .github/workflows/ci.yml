@@ -23,6 +23,15 @@ jobs:
           xelatex hainanubeamer.dtx
           xelatex hainanubeamer.dtx
 
+      - name: Compile Style
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            hainanubeamer.dtx
+          work_in_root_file_dir: true
+          latexmk_use_xelatex: true
+          post_compile: "makeindex -s gind.ist -o hainanubeamer.ind hainanubeamer.idx && makeindex -s gglo.ist -o hainanubeamer.gls hainanubeamer.glo"
+
       - name: Compile Beamer
         uses: xu-cheng/latex-action@v2
         with:
