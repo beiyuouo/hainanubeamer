@@ -15,14 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: |
-          xelatex hainanubeamer.dtx
-          makeindex -s gind.ist -o hainanubeamer.ind hainanubeamer.idx
-          makeindex -s gglo.ist -o hainanubeamer.gls hainanubeamer.glo
-          xelatex hainanubeamer.dtx
-          xelatex hainanubeamer.dtx
-
       - name: Compile Style
         uses: xu-cheng/latex-action@v2
         with:
