@@ -15,21 +15,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: CatInCosmicSpace/latex-template/actions/miktex@master
+      - name: Compile Beamer
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            main.tex
+            main-en.tex
+          work_in_root_file_dir: true
 
-      - name: Compile full example
-        run: |
-          initexmf --register-root $PWD
-          latexmk -pdf main.tex
-          latexmk -pdf main-en.tex
-      - name: Clean after build full example
-        run: |
-          latexmk -c ./main.tex
-          latexmk -c ./main-en.tex
       - name: "Git artifact: PDF"
         uses: actions/upload-artifact@v2
         with:
           name: PDF
           path: |
-            ./main.pdf
-            ./main-en.pdf
+            main.pdf
+            main-en.pdf

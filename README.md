@@ -14,6 +14,8 @@
 
 # Introduction to hainanubeamer
 
+![](https://raw.githubusercontent.com/beiyuouo/hainanubeamer/main/img/overview.jpg)
+
 **hainanubeamer** is a **beamer theme** designed for Hainan University (HaiNanU). Current version is 0.0.1, updated on 2021/11/18.
 
 ```latex
