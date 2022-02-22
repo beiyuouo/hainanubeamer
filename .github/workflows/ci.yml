@@ -20,8 +20,8 @@ jobs:
       # this lines compiles pdf
       - name: Compile example
         run: |
-          latexmk -pdf main.tex
-          latexmk -pdf main-en.tex
+          latexmk -pdf -xelatex main.tex
+          latexmk -pdf -xelatex main-en.tex
       - name: Clean after build example
         run: |
           latexmk -c ./main.tex
