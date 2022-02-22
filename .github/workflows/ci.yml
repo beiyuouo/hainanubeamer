@@ -14,28 +14,24 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-
-      - name: Compile Style
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: |
-            hainanubeamer.dtx
-          work_in_root_file_dir: true
-          latexmk_use_xelatex: true
-          post_compile: "makeindex -s gind.ist -o hainanubeamer.ind hainanubeamer.idx && makeindex -s gglo.ist -o hainanubeamer.gls hainanubeamer.glo"
-
-      - name: Compile Beamer
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: |
-            main.tex
-            main-en.tex
-          work_in_root_file_dir: true
-
+      
+      # you could use this action to install and update miktex
+      - uses: CatInCosmicSpace/latex-template/actions/miktex@master
+      # this lines compiles pdf
+      - name: Compile example
+        run: |
+          latexmk -pdf main.tex
+          latexmk -pdf main-en.tex
+      - name: Clean after build example
+        run: |
+          latexmk -c ./main.tex
+          latexmk -c ./main-en.tex
+      # and this lines published artifacts to github actions
       - name: "Git artifact: PDF"
         uses: actions/upload-artifact@v2
         with:
           name: PDF
           path: |
-            main.pdf
-            main-en.pdf
+            ./main.pdf
+            ./main-en.pdf
+
